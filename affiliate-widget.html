@@ -115,20 +115,17 @@
 
 		</div>
 		<script type="text/javascript">
-			$(function() {
+
+		$(function() {
     		$('#searchwidgetbaseUrl1').click( function() {
         	window.location = $(this).attr('href') + $('#searchFieldWidgetMss').val();
-        	return false;
     	});
-	});
-		</script>
-
-		<script type="text/javascript">
-			$(function() {
-    		$('#searchwidgetbaseUrl1')e.keyCode == 13( function() {
-        	window.location = $(this).attr('href') + $('#searchFieldWidgetMss').val();
-        	return false;
-    	});
+        
+        $('#searchFieldWidgetMss').keyup( function(e){
+          if (e.which == 13) {
+              window.location = $('#searchwidgetbaseUrl1').attr('href') + $('#searchFieldWidgetMss').val();
+          }
+        });
 	});
 		</script>
 

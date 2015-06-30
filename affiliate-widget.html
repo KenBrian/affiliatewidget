@@ -130,11 +130,17 @@
 		</script>
 
 		<script type="text/javascript">
-			$(function() {
+
+		$(function() {
     		$('#searchwidgetbaseUrl2').click( function() {
         	window.location = $(this).attr('href') + $('#searchFieldWidgetJp').val();
-        	return false;
     	});
+        
+        $('#searchFieldWidgetJp').keyup( function(e){
+          if (e.which == 13) {
+              window.location = $('#searchwidgetbaseUrl2').attr('href') + $('#searchFieldWidgetJp').val();
+          }
+        });
 	});
 		</script>
 
